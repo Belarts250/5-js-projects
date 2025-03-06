@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-paper-scissors</title>
+</head>
+<body>
+    <style>*{
+        padding: 70px;
+    }
+    body{
+        justify-items: center;
+    }
+        .b1{
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background-color: blueviolet;
+            font-size: 50px;
+            border: navy;
+        }
+        .b2{
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background-color: black;
+            font-size: 50px;
+            border: navy;
+        }
+        .b3{
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            background-color: aqua;
+            font-size: 50px;
+            border: navy;
+        }
+        .h1{
+            font-family: sans-serif;
+            
+            
+        }
+</style>
+    <h1 class="h1">WELCOME TO THE ROCK-PAPER-SCISSORS MADE IN JAVASCRIPT</h1>
+    <button onclick="
+   
+    score.wins =0;
+    score.loses =0;
+    score.ties =0;
+     const compu = Math.random();
+     let computeri = '';
+    if (compu >=0 && compu < 1/3){
+        computeri = 'rock';
+
+    }
+    else if(compu >= 1/3 && compu < 2/3){
+        computeri = 'paper';
+    }
+    else if(compu >= 2/3 && compu <1){
+        computeri = 'scissors';
+    }
+    console.log (computeri)
+    if(computeri === 'rock'){
+        result = 'tie';
+    }
+    if(computeri === 'paper'){
+        result = 'Oops!😧 You lose. Try again';
+    } if(computeri === 'scissors'){
+        result = ' Congratulations!👍🎉 you win';
+    }
+        alert(`you picked rock.\ncomputer picked ${computeri}.\n${result}`)"  class="b1">✊</button>
+    <button onclick="
+    const compa = Math.random();
+    let computera = '';
+   if (compa >=0 && compa < 1/3){
+       computera = 'rock';
+
+   }
+   else if(compa >= 1/3 && compa < 2/3){
+       computera = 'paper';
+   }
+   else if(compa >= 2/3 && compa <1){
+       computera = 'scissors';
+   }
+   console.log (computera);
+    if(computera === 'paper'){
+        result = 'tie';
+    }
+    if(computera === 'rock'){
+        result = 'Congratulations!👍🎉 you win';
+    } if(computera === 'scissors'){
+        result = 'Oops!😧 You lose. Try again';
+    }
+    
+        alert(`you picked paper.\ncomputer picked ${computera}.\n${result}`)
+       "
+     class="b2">🤚</button>
+    <button onclick="
+    const comp1 = Math.random();
+    let computer1 = '';
+   if (comp1 >=0 && comp1 < 1/3){
+       computer1 = 'rock';
+
+   }
+   else if(comp1 >= 1/3 && comp1 < 2/3){
+       computer1 = 'paper';
+   }
+   else if(comp1 >= 2/3 && comp1 <1){
+       computer1 = 'scissors';
+   }
+   console.log (computer1)
+   if(computer1 === 'scissors'){
+        result = 'tie';
+    }
+    if(computer1 === 'paper'){
+        result = ' Congratulations!👍🎉 you win';
+    } if(computer1 === 'rock'){
+        result = 'Oops!😧 You lose. Try again';
+    }
+        alert(`You chose scissors.\n computer picked ${computer1}.\n${result}`)
+       " class="b3">✌️</button>
+       
+       <script>
+     const score ={
+        wins: 0,
+        lose: 0,
+        ties: 0,
+
+    }
+       </script>
+</body>
+</html>

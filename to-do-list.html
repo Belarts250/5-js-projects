@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .input-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        input {
+            padding: 12px;
+            font-size: 18px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            background-color:#8422e6;
+            color: whitesmoke;
+        }
+        #action {
+            width: 400px;
+        }
+        #date {
+            width: 200px;
+        }
+        .add-button {
+            width: 120px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: #040107;
+            color: white;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .add-button:hover {
+            background-color: #8422e6;
+        }
+        ol {
+            list-style: none;
+            padding: 0;
+            width: 600px;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .delete-button {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .delete-button:hover {
+            background-color: #c0392b;
+        }
+        .done-button {
+            background-color: #27ae60;
+            color: white;
+        }
+        .done-button:hover {
+            background-color: #219150;
+        }
+    </style>
+</head>
+<body>
+    <div class="input-container">
+        <input type="text" id="action" placeholder="Enter your task">
+        <input type="date" id="date">
+        <button class="add-button" onclick="add()">ADD</button>
+    </div>
+    <p id="paragraph">Your plans will appear here 📃</p>
+    <ol id="planlist"></ol>
+    <script>
+        function add(){
+            let action = document.getElementById("action").value;
+            let datetodo = document.getElementById("date").value;
+            
+            if (action === "" || datetodo === "") {
+                alert("Please fill in both fields.");
+                return;
+            }
+            
+            let listItem = document.createElement("li");
+            listItem.innerHTML = `${datetodo} - ${action}`;
+            listItem.style.fontSize = "25px";
+            listItem.style.color = "#ffffff";
+            
+            let mybutton = document.createElement("button");
+            mybutton.innerText = "Delete";
+            mybutton.classList.add("delete-button");
+            
+            let mydone = document.createElement("button");
+            mydone.innerText = "Done";
+            mydone.classList.add("done-button");
+            
+            mybutton.addEventListener("click", function(){
+                listItem.remove();
+            });
+            
+            mydone.addEventListener("click", function(){
+                mydone.innerText ="✅ Completed";
+            });
+            
+            listItem.appendChild(mybutton);
+            document.getElementById("planlist").appendChild(listItem).appendChild(mydone);
+            document.getElementById("action").value = "";
+            document.getElementById("date").value = "";
+        }
+    </script>
+</body>
+</html>
